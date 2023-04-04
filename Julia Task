@@ -1,0 +1,15 @@
+# Julia program to illustrate the
+# use of findall() method to search
+# for an element in an array.
+
+# Searching for an element in a 1D ARRAY
+array1 = [ 12, 35, 7, 34, 72, 12, 5 ]
+sch = 12
+
+indexArray = findall( x -> x == sch, array1 )
+for i in indexArray
+	println("Element found at position ", i)
+end
+if (length( findall( x -> x == sch, array1 )) == 0)
+	println("Element not found.")
+end
