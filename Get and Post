@@ -1,0 +1,16 @@
+const app= require('express')();
+
+const PORT =8080;
+
+app.listen(
+    PORT,
+    () => console.log(`server is running on ${PORT}`)
+);
+
+app.get('/getRequest',(req,res)=>{
+    res.send("hello this is successful get request")
+});
+
+app.post('/postRequest',(req,res)=>{
+    res.send("hello this is successfull Post Request")
+});
