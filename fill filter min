@@ -1,0 +1,42 @@
+var arr=[1,2,3,4,5];
+
+Array.prototype.min = function(){
+    return Math.min.apply(this, arr);
+
+}
+
+console.log(arr.min());
+
+// Array.prototype.fill = function(){
+//     return Math.fill.apply(this, arr);
+
+// }
+
+
+
+Array.prototype.myCustomFilter = function (fn) {
+    const filtered = []; 
+
+    for (let i = 0; i < this.length; i++) {
+        if (fn(this[i])) {
+        filtered.push(this[i]);
+        }
+    }
+
+    return filtered;
+};
+
+const filteredData = arr.myCustomFilter(function (el) {
+    if (el > 2) return el;
+});
+
+
+
+
+
+console.log(filteredData);
+
+console.log(arr.fill(0,2,4));
+
+
+
